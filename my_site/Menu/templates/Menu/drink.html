@@ -1,0 +1,28 @@
+{% extends "Menu/base.html" %}
+{% load static %}
+{% block link_css %}
+<link rel="stylesheet" href=" {% static 'menu/drink.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock  %}
+{% block content %}
+<div id="drink">
+    <div class="search">
+        <form action="{% url 'search' %}" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+        <input type="text" name="query"  placeholder="Search">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    </div>
+    {% for meal_time in meal_times %}
+        <ul>
+            <li>
+                <a href="{% url 'drink-detail' meal_time.slug %}">
+                <p>{{meal_time.name}}</p>
+                <img src="{{meal_time.image.url}}">
+            </a>
+            </li>
+        </ul>
+    
+    {% endfor %}
+</div>
+{% endblock  %}

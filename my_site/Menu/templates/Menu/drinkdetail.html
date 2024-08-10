@@ -1,0 +1,60 @@
+{% extends "Menu/base.html" %}
+{% load static %}
+
+{% block link_css %}
+<link rel="stylesheet" href=" {% static 'menu/drink-detail.css' %}">
+{% endblock %}
+{% block title %}Drink-detail{% endblock %}
+{% block content %}
+<div id="drink-detail">
+    <!-- Duyệt qua danh sách food_menu, với mỗi phần tử là (meal_time, danh sách món ăn) -->
+        <div class="header"><h1>{{ meal_time.name }}</h1> <!-- Hiển thị tên bữa ăn -->
+        <a class="add" href="{% url 'add-menu' %}">Add Menu</a></div>
+        {% for drink in drink_menu %}
+            <div class="drink-item">
+                <img src="{{ drink.image.url }}" alt="{{ drink.name }}">
+                <div class="block">
+                    <div>
+                <h3>{{ drink.name }}</h3>
+                <p>{{ drink.content }}</p>
+                <span>{{ drink.price }}</span>
+                    </div>
+                <div class="block-icon">
+                    <i class="fa-solid fa-ellipsis icon-option"></i>
+                    <div class="block-icon_text">
+                        <a href="{% url 'updata' drink.id %}"><p>Updata</p></a>
+                        <a href="{% url 'delete' drink.id %}"><p>Delete</p></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+
+    <script>
+        let icons = document.querySelectorAll('.icon-option')
+        icons.forEach(function(icon){
+                    // Đối tượng 'food-item' chứa mỗi phần tử cần xử lý
+            let foodItem = icon.closest('.drink-item');
+            let optionText = foodItem.querySelector('.block-icon_text');
+            if (icon && optionText) {
+                icon.onclick = function() {
+                    document.querySelectorAll('.block-icon_text').forEach(function(el){
+                        if (el!==optionText) {
+                            el.style.display = 'none'
+                        }
+                    })
+                    if (optionText.style.display === 'none' || optionText.style.display === '') {
+                        optionText.style.display = 'block'; // Hiển thị phần tử
+        
+                    } else {
+                        optionText.style.display = 'none'; // Ẩn phần tử nếu đã hiển thị
+                    }
+                };
+            } else {
+                console.error('Phần tử không tồn tại');
+            }
+        })
+    </script>
+
+{% endblock %}

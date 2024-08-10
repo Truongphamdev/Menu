@@ -1,0 +1,30 @@
+#delete button {
+    padding: 6px 12px;
+    background-color: aqua;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 6px;
+
+}
+#delete button:hover {
+    background-color: black;
+    color: aliceblue;
+    transition: all 0.5s;
+}
+#delete a { 
+    padding: 6px 12px;
+    border:  1px ;
+    background-color: aqua;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 6px;
+}
+#delete a:hover {
+    background-color: black;
+    color: aliceblue;
+    transition: all 0.5s;
+}

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'menu/base.css' %}">
+    {% block link_css %} 
+    {% endblock  %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>{% block title %} Main{% endblock %}</title>
+
+</head>
+<body>
+
+    <div class="containeer">
+    <section id="base">
+        <img src="{% static 'menu/image/B25100754987454553.jpg' %}" alt="">
+        <div class="main">
+    <h1>My Restaurant Menu</h1>
+    <div class="main-contact">
+        <p><i class="fa-solid fa-location-dot"></i><span>Fleku, Gia Lai</span></p>
+        <p><i class="fa-solid fa-phone"></i><span>0365908714</span></p>
+    </div>
+    <p>Here you can add additional information for your guests, like taxes, service fees, restaurant working hours,
+        contacts, delivery terms, general QR code menu information, and so on</p>
+    <p>You can also add spacings</p>
+    <div class="main-button">
+        <a href="{% url 'food' %}" class="btn">Main Menu</a>
+        <a href="{% url 'drink' %}" class="btnn">Bar</a>
+</div>
+</div>
+
+</section>
+</div>
+{% block content %}
+
+    {% endblock  %}
+<script >
+
+</script>
+</body>
+</html>

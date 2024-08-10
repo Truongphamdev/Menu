@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'menu/add-menu.css' %}">
+    <title>add-menu</title>
+</head>
+<body>
+    <form action="{% url 'add-menu' %}" method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="add-menu">
+            <h2>Your Menu</h2>
+            {{form.label}}
+            {{form}}
+            <button>Add</button>
+        </div>
+    </form>
+    {% if form.errors %}
+    <div class="errors">
+        {{ form.errors }}
+    </div>
+{% endif %}
+</body>
+</html>
+

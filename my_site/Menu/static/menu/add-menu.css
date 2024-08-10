@@ -1,0 +1,51 @@
+.add-menu {
+    margin: 3rem auto;
+    max-width: 40rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    background-color: rgb(137, 233, 233);
+}
+.add-menu h2 {
+    text-align: center;
+    font-size: 43px;
+    margin-bottom: 0;
+}
+.add-menu input,
+.add-menu textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.add-menu select {
+    display: block;
+    padding: 0.25rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .add-menu input:nth-of-type(1) {
+      border: none;
+  }
+  .add-menu label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  .add-menu button {
+      padding: 10px 26px;
+      border:  none;
+      font-size: 22px;
+      margin-top: 20px;
+      border-radius: 5px;
+      background-color: red;
+      color: white;
+      transition: all 0.5s;
+  }
+  .add-menu button:hover {
+      cursor: pointer;
+      background-color: black;
+  }
